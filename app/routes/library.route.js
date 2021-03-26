@@ -1,5 +1,5 @@
 module.exports = app => {
     const library = require('../controllers/library.controller');
 
-    app.get('/libraries', )
-}
+    app.get('/libraries', library.getLibraries);
+};
