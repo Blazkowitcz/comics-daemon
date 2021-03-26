@@ -1,0 +1,31 @@
+{
+  "name": "comics-daemon",
+  "version": "1.0.0",
+  "description": "Comic reader online build in node.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blazkowitcz/comics-daemon.git"
+  },
+  "keywords": [
+    "comics",
+    "reader",
+    "online"
+  ],
+  "author": "Blazkowicz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Blazkowitcz/comics-daemon/issues"
+  },
+  "homepage": "https://github.com/Blazkowitcz/comics-daemon#readme",
+  "devDependencies": {
+    "eslint": "^7.22.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
