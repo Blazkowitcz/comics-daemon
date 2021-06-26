@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 const autoIncrement = require('mongoose-sequence')(mongoose);
 
 /**
- * Library Database Schema
+ * Collection Database Schema
  */
-const Library = mongoose.Schema({
+const Collection = mongoose.Schema({
     title: {
         type: String,
         required: true
@@ -13,11 +13,15 @@ const Library = mongoose.Schema({
         type: String,
         required: true
     },
+    library_id: {
+        type: Number,
+        required: true
+    },
     logo_url: {
         type: String,
         required: false
     }
 })
 
-Library.plugin(autoIncrement, {id: 'library', inc_field: 'id'});
-module.exports = mongoose.model("libraries", Library);
+Collection.plugin(autoIncrement, {id: 'collection', inc_field: 'id'});
+module.exports = mongoose.model("collections", Collection);
