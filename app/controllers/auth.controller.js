@@ -24,7 +24,7 @@ exports.signup = async (req, res) => {
         user.password = await bcrypt.hash(password, salt);
         await user.save();
         const payload = { user: { id: user.id }};
-        jwt.sign(payload, "randomString", { expiresIn: "2h" },
+        jwt.sign(payload, "randomString", { expiresIn: 7200 },
             (err, token) => {
                 if (err) throw err;
                 res.status(200).json({ token });
@@ -77,6 +77,11 @@ exports.signin = async (req, res) => {
     }
 }
 
+/**
+ * Disconnect a user
+ * @param {Request} req 
+ * @param {Result} res 
+ */
 exports.logout = async (req, res) => {
   try{
     req.user = {}
@@ -90,6 +95,11 @@ exports.logout = async (req, res) => {
   }
 }
 
+/**
+ * Return current user info
+ * @param {Request} req 
+ * @param {Result} res 
+ */
 exports.me = async (req, res) => {
     try {
         const user = await User.findOne({id: req.user.id});
